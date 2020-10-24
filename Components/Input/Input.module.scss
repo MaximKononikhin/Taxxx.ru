@@ -1,0 +1,36 @@
+.inputField {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  margin-bottom: 28px;
+
+  label {
+    margin-bottom: 7px;
+    padding: 0 6px;
+
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3E4958;
+  }
+
+  input {
+    height: 44px;
+
+    padding: 12px 16px;
+
+    background: #F7F8F9;
+
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3E4958;
+
+    outline: none;
+    border: 0.5px solid #D5DDE0;
+    border-radius: 15px;
+
+  }
+}

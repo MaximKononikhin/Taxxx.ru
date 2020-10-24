@@ -1,0 +1,1 @@
+export const SWITCH_LOGIN_ERR = 'signInScreen/switch-login-err';

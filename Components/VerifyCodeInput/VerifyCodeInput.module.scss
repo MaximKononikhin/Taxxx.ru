@@ -1,0 +1,35 @@
+.codeInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 30px;
+}
+.codeLabel {
+  margin-bottom: 16px;
+}
+.codeInputs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.codeInputs input {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-align: center;
+  height: 60px;
+  width: 40px;
+  margin: 0 4px;
+  border-bottom: 1px solid #1152FD;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 32px;
+  color: #1152FD;
+}
+.codeInputs input:focus {
+  outline: none;
+}

@@ -1,0 +1,52 @@
+.requirementsList {
+  position: relative;
+
+  margin: 0 5px 35px;
+  padding-left: 23px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+    padding-left: 4px;
+
+    font-size: 9px;
+    line-height: 10px;
+    letter-spacing: 0.075em;
+    color: #97ADB6;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 5px;
+      left: 0;
+
+      width: 2px;
+      height: 2px;
+
+      border-radius: 50%;
+      background-color: #97ADB6;
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+  }
+
+  &:first-child {
+    margin-top: -28px;
+  }
+}
