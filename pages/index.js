@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import AddressModal from '../Components/AddressModal/AddressModal';
+import Map from '../Components/Map/Map';
+
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
@@ -8,9 +11,8 @@ export default function Home() {
         <title>Taxxx.ru</title>
       </Head>
       <main className={styles.main}>
-        <section className={styles.mapSection}>
-          <img src="/Images/map.png"></img>
-        </section>
+        <Map/>
+        <AddressModal/>
       </main>
     </>
   )
