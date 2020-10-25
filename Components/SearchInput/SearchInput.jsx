@@ -5,15 +5,18 @@ import style from './SearchInput.module.scss';
 const SearchInput = (props) => {
   const  {value, handler, onFocusHandler} = props;
   return (
-    <input
-      id="search"
-      className={style.searchInput}
-      type="text"
-      name="search"
-      value={value}
-      onChange={(e) => handler(e)}
-      onFocus={onFocusHandler}
-    />
+    <span className={style.searchInput}>
+      <input 
+        id="search"
+        type="text"
+        name="search"
+        value={value}
+        onChange={(e) => handler(e)}
+        onFocus={onFocusHandler}
+      />
+      
+    </span>
+    
   )
 }
 
