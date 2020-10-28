@@ -1,5 +1,7 @@
 import Head from 'next/head'
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Swipeable } from 'react-swipeable'
 import CityItem from '../Components/CityItem/CityItem';
 import Map from '../Components/Map/Map';
@@ -22,9 +24,20 @@ export default function Home() {
   const [isModalOpen, switchModal] = useState(false);
   const [address, setAddress] = useState('');
 
+  const isAuthNeed = useSelector(state => state.signInReducer.isAuthNeed);
+
+  const router = useRouter();
+
   const addressHandler = (evt) => {
     setAddress(evt.target.value);
   }
+
+  useEffect(() => {
+    if (isAuthNeed) {
+      router.push('sign-in');
+    }
+  }, [])
+
   return (
     <>
       <Head>

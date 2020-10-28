@@ -1,7 +1,8 @@
-import { SWITCH_LOGIN_ERR } from "./actionTypes";
+import { SWITCH_AUTH_NEED, SWITCH_LOGIN_ERR } from "./actionTypes";
 
 const initialState = {
-  isLoginError: false
+  isLoginError: false,
+  isAuthNeed: true
 }
 
 export const reducer = (state = initialState, action) => {
@@ -11,6 +12,13 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoginError: action.payload
+      }
+    }
+
+    case SWITCH_AUTH_NEED: {
+      return {
+        ...state,
+        isAuthNeed: action.payload
       }
     }
 
