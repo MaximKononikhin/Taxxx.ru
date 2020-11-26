@@ -32,26 +32,33 @@ export default function Home() {
     setAddress(evt.target.value);
   }
 
-  useEffect(() => {
-    if (isAuthNeed) {
-      router.push('sign-in');
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (isAuthNeed) {
+  //     router.push('sign-in');
+  //   }
+  // }, [])
 
-  return (
-    <>
-      <Head>
-        <title>Taxxx.ru</title>
-      </Head>
-      <main className={style.main}>
-        <Map/>
-        <Swipeable style={isModalOpen? {top: '21vh'} : {top: '68.5vh'}} className={style.addressSection} onSwipedUp={() => switchModal(true)} onSwipedDown={() => switchModal(false)}>
-          <SearchInput value={address} handler={addressHandler} onFocusHandler={() => switchModal(true)}/>
-          <ul className={style.citiesList}>
-            {citiesExample.map(city => <CityItem key={city.id} city={city}/>)}
-          </ul>
-        </Swipeable>
-      </main>
-    </>
-  )
+  if(isAuthNeed) {
+    return (
+      <>
+        <Head>
+          <title>Taxxx.ru</title>
+        </Head>
+        <main className={style.main}>
+          <Map/>
+          <Swipeable style={isModalOpen? {top: '21vh'} : {top: '68.5vh'}} className={style.addressSection} onSwipedUp={() => switchModal(true)} onSwipedDown={() => switchModal(false)}>
+            <div className={style.addressSection__wrapper}>
+              <input type="text" placeholder="Адрес отправления" onFocus={() =>switchModal(true)}/>
+              <input type="text" placeholder="Адрес прибытия" onFocus={() =>switchModal(true)}/>
+              <img src="/Images/ic_route.svg" width="16" height="65"/>
+            </div>
+            <ul className={style.citiesList}>
+              {citiesExample.map(city => <CityItem key={city.id} city={city}/>)}
+            </ul>
+          </Swipeable>
+        </main>
+      </>
+    )
+  }
+  return null
 }
